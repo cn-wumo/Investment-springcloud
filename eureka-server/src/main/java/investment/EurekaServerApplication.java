@@ -15,6 +15,6 @@ public class EurekaServerApplication {
             System.err.printf("端口%d被占用了，无法启动%n", port );
             System.exit(1);
         }
-        new SpringApplicationBuilder(EurekaServerApplication.class).properties("server.port=" + port).run(args);
+        new SpringApplicationBuilder(EurekaServerApplication.class).run(args);
     }
 }

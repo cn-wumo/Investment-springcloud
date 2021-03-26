@@ -2,6 +2,12 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
 spring:
   application:
     name: third-part-index-data-project
+ribbon:
+  eureka:
+    enabled: true

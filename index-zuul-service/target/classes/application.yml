@@ -7,7 +7,9 @@ eureka:
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
 spring:
   application:
-    name: third-part-index-data-project
-ribbon:
-  eureka:
-    enabled: true
+    name: index-zuul-service
+zuul:
+  routes:
+    api-a:
+      path: /api-codes/**
+      serviceId: INDEX-CODES-SERVICE

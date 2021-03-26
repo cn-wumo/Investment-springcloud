@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>eureka-server</artifactId>
+    <artifactId>index-zuul-service</artifactId>
 
     <properties>
         <maven.compiler.source>14</maven.compiler.source>
@@ -19,9 +19,18 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-            <version>2.1.1.RELEASE</version>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.4.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+            <version>2.2.4.RELEASE</version>
         </dependency>
     </dependencies>
-
 </project>
