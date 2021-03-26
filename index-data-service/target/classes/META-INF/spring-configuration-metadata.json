@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "spring.cache.redis",
+      "type": "investment.config.RedisCacheConfig",
+      "sourceType": "investment.config.RedisCacheConfig"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}

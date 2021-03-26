@@ -20,7 +20,6 @@ import java.util.Map;
 @Service
 @CacheConfig(cacheNames="indexes")
 public class IndexService {
-    private List<Index> indexes;
     @Autowired
     RestTemplate restTemplate;
 
@@ -34,7 +33,7 @@ public class IndexService {
         return CollUtil.toList();
     }
 
-    @HystrixCommand(fallbackMethod = "thirdPartyNotConnected")
+    @HystrixCommand(fallbackMethod = "third_part_not_connected")
     @CachePut(key = "'all_codes'",unless = "#result[0].code=='000000'")
     public List<Index> fresh() {
         return fetch_indexes_from_third_part();
