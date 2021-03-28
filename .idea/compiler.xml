@@ -7,11 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="index-zuul-service" />
-        <module name="index-codes-service" />
-        <module name="third-part-index-data-project" />
         <module name="index-data-service" />
+        <module name="index-codes-service" />
         <module name="eureka-server" />
         <module name="index-gather-store-service" />
+        <module name="third-part-index-data-project" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

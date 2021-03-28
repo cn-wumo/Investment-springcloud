@@ -1,16 +1,19 @@
 package investment;
 
 import cn.hutool.core.net.NetUtil;
+import investment.config.RibbonEurekaClientConfig;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.ribbon.RibbonClients;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @SpringBootApplication
 @EnableZuulProxy
 @EnableEurekaClient
 @EnableDiscoveryClient
+@RibbonClients(defaultConfiguration = RibbonEurekaClientConfig.class)
 public class IndexZuulServiceApplication {
     public static void main(String[] args) {
         int port = 8031;

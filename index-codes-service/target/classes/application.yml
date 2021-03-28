@@ -8,6 +8,7 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    appname: index-codes-service
 ribbon:
   eureka:
     enabled: true

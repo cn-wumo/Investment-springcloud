@@ -8,6 +8,3 @@ eureka:
 spring:
   application:
     name: index-gather-store-service
-ribbon:
-  eureka:
-    enabled: true
