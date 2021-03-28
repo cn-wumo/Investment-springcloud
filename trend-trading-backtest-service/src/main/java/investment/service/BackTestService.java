@@ -18,9 +18,6 @@ public class BackTestService {
     public List<IndexData> listIndexData(String code){
         List<IndexData> result = indexDataClient.getIndexData(code);
         Collections.reverse(result);
-        for (IndexData indexData : result) {
-            System.out.println(indexData.getDate());
-        }
         return result;
     }
 }

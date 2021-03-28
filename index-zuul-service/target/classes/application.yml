@@ -13,3 +13,4 @@ zuul:
     index-codes-service: /api-codes/**
     index-data-service: /api-data/**
     trend-trading-backtest-service: /api-backtest/**
+    TREND-TRADING-BACKTEST-VIEW: /api-view/**
