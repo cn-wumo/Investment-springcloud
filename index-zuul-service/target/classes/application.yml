@@ -10,4 +10,6 @@ spring:
     name: index-zuul-service
 zuul:
   routes:
-    INDEX-CODES-SERVICE: /api-codes/**
+    index-codes-service: /api-codes/**
+    index-data-service: /api-data/**
+    trend-trading-backtest-service: /api-backtest/**
