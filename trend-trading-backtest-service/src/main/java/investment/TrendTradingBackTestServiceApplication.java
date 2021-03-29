@@ -53,7 +53,6 @@ public class TrendTradingBackTestServiceApplication {
                     String strPort = scanner.nextLine();
                     if(!NumberUtil.isInteger(strPort)) {
                         System.err.println("只能是数字");
-                        continue;
                     }
                     else {
                         p = Convert.toInt(strPort);
