@@ -1,5 +1,6 @@
 package investment;
 
+import brave.sampler.Sampler;
 import cn.hutool.core.net.NetUtil;
 import investment.config.RibbonEurekaClientConfig;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,6 +9,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.ribbon.RibbonClients;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 @EnableZuulProxy
@@ -22,5 +24,9 @@ public class IndexZuulServiceApplication {
             System.exit(1);
         }
         new SpringApplicationBuilder(IndexZuulServiceApplication.class).properties("server.port=" + port).run(args);
+    }
+    @Bean
+    public Sampler defaultSampler() {
+        return Sampler.ALWAYS_SAMPLE;
     }
 }

@@ -1,5 +1,6 @@
 package investment;
 
+import brave.sampler.Sampler;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.net.NetUtil;
 import cn.hutool.core.util.NumberUtil;
@@ -50,5 +51,9 @@ public class IndexGatherStoreApplication {
     @Bean
     RestTemplate restTemplate() {
         return new RestTemplate();
+    }
+    @Bean
+    public Sampler defaultSampler() {
+        return Sampler.ALWAYS_SAMPLE;
     }
 }

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: index-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/cn-wumo/trendConfig
+          searchPaths: respo
+          default-label: main
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
