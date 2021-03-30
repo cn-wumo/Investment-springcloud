@@ -2,8 +2,10 @@ package investment.web;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
+import investment.pojo.AnnualProfit;
 import investment.pojo.IndexData;
 import investment.pojo.Profit;
+import investment.pojo.Trade;
 import investment.service.BackTestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -35,14 +37,28 @@ public class BackTestController {
         float sellRate = 0.95f;
         float buyRate = 1.05f;
         float serviceCharge = 0f;
-        Map<String,?> simulateResult= backTestService.simulate(ma,sellRate, buyRate,serviceCharge, allIndexData);
+        Map<String,Object> simulateResult= backTestService.simulate(ma,sellRate, buyRate,serviceCharge, allIndexData);
         List<Profit> profits = (List<Profit>) simulateResult.get("profits");
+        List<Trade> trades = (List<Trade>) simulateResult.get("trades");
+
+        int winCount = (Integer) simulateResult.get("winCount");
+        int lossCount = (Integer) simulateResult.get("lossCount");
+        float avgWinRate = (Float) simulateResult.get("avgWinRate");
+        float avgLossRate = (Float) simulateResult.get("avgLossRate");
 
         Map<String,Object> result = new HashMap<>();
         result.put("indexData", allIndexData);
         result.put("indexStartDate", indexStartDate);
         result.put("indexEndDate", indexEndDate);
         result.put("profits", profits);
+        result.put("trades", trades);
+
+        result.put("winCount", winCount);
+        result.put("lossCount", lossCount);
+        result.put("avgWinRate", avgWinRate);
+        result.put("avgLossRate", avgLossRate);
+        List<AnnualProfit> annualProfits = (List<AnnualProfit>) simulateResult.get("annualProfits");
+        result.put("annualProfits", annualProfits);
 
         return result;
     }
