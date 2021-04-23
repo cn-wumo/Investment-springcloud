@@ -1,5 +1,5 @@
 # Investment-springcloud
- sprincloud项目练习，教程来源https://how2j.cn/
+ sprincloud项目练习
 
 # 技术栈
 1. 前端
